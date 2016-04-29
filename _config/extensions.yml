@@ -1,0 +1,29 @@
+---
+Name: shop-inventory--extensions
+After:
+  - 'framework/*'
+Before:
+  - 'shop/*'
+---
+Order:
+  extensions:
+    - 'Milkyway\SS\Shop\Inventory\Extensions\Order'
+OrderItem:
+  extensions:
+    - 'Milkyway\SS\Shop\Inventory\Extensions\OrderItem'
+Product:
+  extensions:
+    - 'Milkyway\SS\Shop\Inventory\Extensions\TrackStockOnBuyable'
+ProductVariation:
+  extensions:
+    - 'Milkyway\SS\Shop\Inventory\Extensions\TrackStockOnBuyable'
+SiteConfig:
+  extensions:
+    - 'Milkyway\SS\Shop\Inventory\Extensions\Config'
+ProductCatalogAdmin:
+  extensions:
+    - 'Milkyway\SS\Shop\Inventory\Extensions\ProductCatalogAdmin'
+
+Injector:
+  ProductStockDecorator:
+    class: 'Milkyway\SS\Shop\Inventory\Extensions\TrackStockOnBuyable'
