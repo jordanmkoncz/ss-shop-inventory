@@ -1,5 +1,5 @@
 {
-  "name"        : "milkyway-multimedia/ss-shop-inventory",
+  "name"        : "jordanmkoncz/ss-shop-inventory",
   "description" : "A simple inventory tracker for the shop module",
   "type"        : "silverstripe-module",
   "keywords"    : [
