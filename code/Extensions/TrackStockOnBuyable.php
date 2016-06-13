@@ -99,6 +99,17 @@ class TrackStockOnBuyable extends DataExtension
         }
     }
 
+    /**
+     * Update summary fields to include stock-related information.
+     *
+     * @param array $fields
+     */
+    public function updateSummaryFields(&$fields) {
+        $fields['AvailableStock'] = 'Available Stock';
+        $fields['IsInventoryTrackedNice'] = 'Inventory Tracked';
+
+    }
+
     public function canPurchase($member = null, $quantity = 1)
     {
         if (Config::env('ShopConfig.Inventory.DisableInventory') || Config::env('ShopConfig.Inventory.AlwaysAllowPurchase')) {
@@ -129,6 +140,13 @@ class TrackStockOnBuyable extends DataExtension
         $this->owner->extend('updateAvailableStock', $stock);
 
         return $stock;
+    }
+
+    public function IsInventoryTrackedNice()
+    {
+        $tracked = $this->owner->{$this->stockField . '_NoTracking'};
+
+        return $tracked ? _t('Boolean.NOANSWER', 'No') : _t('Boolean.YESANSWER', 'Yes');
     }
 
     public function incrementStock($value = 1, $orderItem = null, $write = true)
