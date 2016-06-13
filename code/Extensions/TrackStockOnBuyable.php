@@ -62,10 +62,10 @@ class TrackStockOnBuyable extends DataExtension
         ];
     }
 
-    public function populateDefaults()
+    /*public function populateDefaults()
     {
         $this->owner->{$this->stockField} = (int)Config::env('ShopConfig.Inventory.DefaultStock');
-    }
+    }*/
 
     public function updateCMSFields(FieldList $fields)
     {
