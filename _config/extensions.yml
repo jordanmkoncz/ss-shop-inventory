@@ -20,9 +20,6 @@ ProductVariation:
 SiteConfig:
   extensions:
     - 'Milkyway\SS\Shop\Inventory\Extensions\Config'
-ProductCatalogAdmin:
-  extensions:
-    - 'Milkyway\SS\Shop\Inventory\Extensions\ProductCatalogAdmin'
 
 Injector:
   ProductStockDecorator:
