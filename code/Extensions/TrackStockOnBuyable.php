@@ -185,6 +185,8 @@ class TrackStockOnBuyable extends DataExtension
             return $result;
         }
 
+        $this->owner->extend('beforeDecrementStock', $value, $orderItem, $write);
+
         $currentStock = $this->owner->AvailableStock();
 
         if ($currentStock < $value) {
